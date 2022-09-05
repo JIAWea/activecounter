@@ -3,18 +3,16 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
-
 	"activecounter/internal/service"
 )
 
-type CmdFun struct {
-	Func   func(ctx *gin.Context, req interface{}) (interface{}, error)
-	Path   string
-	Method string
+type ServerCmdMap struct {
+	Path    string
+	Method  string
+	Handler interface{}
 }
 
-var CmdFunMap = []*CmdFun{
-	{Func: service.SayHello, Path: "/v1/SayHello", Method: "GET"},
-	{Func: service.SayHelloV2, Path: "/v2/SayHelloV2", Method: "GET"},
+var CmdFunMap = []ServerCmdMap{
+	{Path: "/v1/SayHello", Method: "GET", Handler: service.SayHello},
+	{Path: "/v2/SayHelloV2", Method: "GET", Handler: service.SayHelloV2},
 }
