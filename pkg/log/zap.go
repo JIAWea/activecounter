@@ -64,8 +64,7 @@ func newZapLogger(cfg *Config) (Logger, error) {
 	// 开启文件及行号
 	development := zap.Development()
 	// 设置初始化字段
-	filed := zap.Fields(zap.String("ip", "127.0.0.1"),
-		zap.String("app", "FTServer"))
+	filed := zap.Fields(zap.String("ip", "127.0.0.1"))
 	// 构造日志
 	logger := zap.New(
 		combinedCore,

@@ -1,0 +1,11 @@
+server:
+  port: 8999
+  prefix_path: /api/v1
+  runmode: debug  # 开发模式, debug, release, test
+
+db:
+  addr: "database connection uri"
+
+redis:
+  addr: 127.0.0.1:6379
+  db: 0
